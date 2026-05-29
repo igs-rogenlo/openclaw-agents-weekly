@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OpenClaw Agents — 本周改版報告 2026/05/29</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, "Microsoft JhengHei", sans-serif; background: #0f172a; color: #e2e8f0; min-height: 100vh; padding: 40px 24px; }
+.container { max-width: 960px; margin: 0 auto; }
+h1 { font-size: 2rem; text-align: center; margin-bottom: 8px; background: linear-gradient(135deg, #38bdf8, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.subtitle { text-align: center; color: #94a3b8; margin-bottom: 40px; font-size: 0.9rem; }
+.section { background: #1e293b; border-radius: 12px; padding: 24px; margin-bottom: 20px; border: 1px solid #334155; }
+.section h2 { font-size: 1.1rem; color: #38bdf8; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+.section h2::before { content: attr(data-icon); font-size: 1.2rem; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+.card { background: #0f172a; border-radius: 8px; padding: 16px; border: 1px solid #334155; }
+.card .label { font-size: 0.75rem; color: #94a3b8; margin-bottom: 4px; }
+.card .value { font-size: 1.1rem; font-weight: 600; }
+.tag { display: inline-block; background: #334155; border-radius: 4px; padding: 2px 8px; font-size: 0.75rem; color: #94a3b8; margin-top: 4px; }
+.tag.new { background: #065f46; color: #6ee7b7; }
+.tag.upgrade { background: #1e3a5f; color: #7dd3fc; }
+.list { list-style: none; }
+.list li { padding: 10px 0; border-bottom: 1px solid #334155; display: flex; align-items: center; gap: 10px; }
+.list li:last-child { border-bottom: none; }
+.list .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.list .dot.green { background: #4ade80; }
+.list .dot.blue { background: #60a5fa; }
+.list .dot.purple { background: #a78bfa; }
+.list .dot.orange { background: #fb923c; }
+table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #334155; }
+th { color: #94a3b8; font-weight: 500; font-size: 0.75rem; text-transform: uppercase; }
+td { color: #e2e8f0; }
+.bar-wrap { display: flex; align-items: center; gap: 8px; }
+.bar { height: 6px; border-radius: 3px; background: #38bdf8; }
+.highlight { background: linear-gradient(135deg, #1e3a5f, #1e293b); border-color: #38bdf8; }
+.security-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.sec-item { font-size: 0.85rem; padding: 8px 12px; background: #0f172a; border-radius: 6px; border-left: 3px solid #38bdf8; }
+@media (max-width: 600px) { .security-grid { grid-template-columns: 1fr; } .grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>OpenClaw Agents 改版報告</h1>
+<p class="subtitle">RD4 ｜ 2026/05/29</p>
+
+<!-- 本周亮點 -->
+<div class="section highlight">
+  <h2 data-icon="🚀">本周重點成果</h2>
+  <div class="grid">
+    <div class="card"><div class="label">新增 Agents</div><div class="value">+2</div><span class="tag new">NEW</span></div>
+    <div class="card"><div class="label">功能升級</div><div class="value">3 項</div><span class="tag upgrade">UPGRADE</span></div>
+    <div class="card"><div class="label">支援平台</div><div class="value">Discord 多 Chat</div></div>
+    <div class="card"><div class="label">外網安全</div><div class="value">資安探討中</div></div>
+  </div>
+</div>
+
+<!-- 新增 Agents -->
+<div class="section">
+  <h2 data-icon="🤖">新增 Agents</h2>
+  <ul class="list">
+    <li><span class="dot green"></span><strong>平台美術 Agent</strong> — 協助平台美術相關需求</li>
+    <li><span class="dot green"></span><strong>魚機美術 Agent</strong> — 協助魚機美術相關需求</li>
+  </ul>
+</div>
+
+<!-- 功能升級 -->
+<div class="section">
+  <h2 data-icon="⬆️">功能升級</h2>
+  <ul class="list">
+    <li><span class="dot blue"></span><strong>自然語言群組通知</strong> — 用自然語言即可對群組發送通知，不需手動操作</li>
+    <li><span class="dot blue"></span><strong>Discord 多 Chat 支援</strong> — 同一人可同時開啟多個對話，互不干擾</li>
+    <li><span class="dot purple"></span><strong>機率 Agent 競品抄錄</strong> — 新增競品機率抄錄能力，加速競品分析</li>
+  </ul>
+</div>
+
+<!-- 外網資安 -->
+<div class="section">
+  <h2 data-icon="🔒">外網部署 — 資安議題探討</h2>
+  <p style="font-size:0.85rem; color:#94a3b8; margin-bottom:12px;">目前正與事業處資安窗口及管理部探討中，以下為已規劃的安全機制</p>
+  <div class="security-grid">
+    <div class="sec-item">🔑 僅限公司 365 帳號登入（Single Tenant）</div>
+    <div class="sec-item">🛡️ AWS WAF 防護（SQL Injection / XSS）</div>
+    <div class="sec-item">🔐 全程 HTTPS + Token 加密儲存</div>
+    <div class="sec-item">📋 最小權限原則 + CloudTrail 稽核</div>
+    <div class="sec-item">🌏 資料落地東京（ap-northeast-1）</div>
+    <div class="sec-item">💰 月費約 $15–20 USD</div>
+  </div>
+</div>
+
+<!-- 群組應用 -->
+<div class="section">
+  <h2 data-icon="💬">Agent 群組應用現況</h2>
+  <p style="font-size:0.85rem; color:#94a3b8; margin-bottom:12px;">Agents 已實際導入群組日常工作流程</p>
+  <ul class="list">
+    <li><span class="dot orange"></span>群組內可直接呼叫 Agent 執行任務</li>
+    <li><span class="dot orange"></span>自然語言下達通知指令，Agent 自動發送至指定群組</li>
+    <li><span class="dot orange"></span>Discord 支援一人多 Chat，不同議題分開處理</li>
+  </ul>
+</div>
+
+<!-- 使用率 -->
+<div class="section">
+  <h2 data-icon="📊">各 Agents 使用率</h2>
+  <table>
+    <thead><tr><th>Agent</th><th>使用狀況</th><th></th></tr></thead>
+    <tbody>
+      <tr><td>機率 Agent</td><td><div class="bar-wrap"><div class="bar" style="width:85%"></div><span style="font-size:0.75rem;color:#94a3b8">高</span></div></td><td></td></tr>
+      <tr><td>平台美術 Agent</td><td><div class="bar-wrap"><div class="bar" style="width:40%;background:#4ade80"></div><span style="font-size:0.75rem;color:#94a3b8">新上線</span></div></td><td></td></tr>
+      <tr><td>魚機美術 Agent</td><td><div class="bar-wrap"><div class="bar" style="width:35%;background:#4ade80"></div><span style="font-size:0.75rem;color:#94a3b8">新上線</span></div></td><td></td></tr>
+      <tr><td>群組通知</td><td><div class="bar-wrap"><div class="bar" style="width:60%;background:#fb923c"></div><span style="font-size:0.75rem;color:#94a3b8">中</span></div></td><td></td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:0.75rem; color:#64748b; margin-top:12px;">* 使用率為相對示意，請依實際數據調整</p>
+</div>
+
+</div>
+</body>
+</html>
