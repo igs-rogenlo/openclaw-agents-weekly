@@ -45,28 +45,28 @@ h1 { font-size: 2rem; text-align: center; margin-bottom: 8px; background: linear
 
 <!-- 自然語言群組通知 -->
 <div class="section">
-  <h2>💬 自然語言群組通知 <span class="tag up">升級</span></h2>
+  <h2>💬 自然語言群組通知（Telegram）<span class="tag up">升級</span></h2>
   <div class="feature">
-    <div class="desc">將 Agent 拉進群組後，任何人都能用自然語言設定提醒規則：定時 tag 成員、收到特定訊息時 tag，直到成員回覆才取消</div>
+    <div class="desc">將 Agent 拉進 Telegram 群組後，用自然語言設定提醒規則：定時或收到特定訊息時 tag 指定成員，該成員回覆後自動取消提醒</div>
     <div class="example">
-      <div class="label">💡 範例：定時提醒直到回覆</div>
+      <div class="label">💡 範例：定時提醒某人直到回覆</div>
       <div class="chat">
-        <span class="user">👤 PM：</span>「每天下午 3 點提醒 @美術組 回報進度，有人回覆就取消」<br>
-        <span class="agent">🤖 Agent：</span>已設定 ✅ 每天 15:00 會 tag 美術組，任一成員回覆後自動停止
+        <span class="user">👤 PM：</span>「每天下午 3 點提醒 @小明 回報進度，他回覆就取消」<br>
+        <span class="agent">🤖 Agent：</span>已設定 ✅ 每天 15:00 會 tag 小明，他回覆後自動停止
       </div>
     </div>
     <div class="example">
       <div class="label">💡 範例：收到訊息觸發提醒</div>
       <div class="chat">
-        <span class="user">👤 主管：</span>「如果群組收到『版本釋出』的訊息，就 tag @QA組 開始測試」<br>
-        <span class="agent">🤖 Agent：</span>已設定 ✅ 偵測到「版本釋出」時會自動通知 QA 組
+        <span class="user">👤 主管：</span>「如果群組收到『版本釋出』，就 tag @阿華 開始測試」<br>
+        <span class="agent">🤖 Agent：</span>已設定 ✅ 偵測到「版本釋出」時會自動 tag 阿華
       </div>
     </div>
     <div class="example">
       <div class="label">💡 範例：每隔一段時間催繳</div>
       <div class="chat">
-        <span class="user">👤 行政：</span>「每 2 小時提醒 @全體 填寫週報，有人交了就不再提醒他」<br>
-        <span class="agent">🤖 Agent：</span>已設定 ✅ 每 2 小時 tag 尚未填寫的成員，交了的人自動排除
+        <span class="user">👤 行政：</span>「每 2 小時提醒 @志偉 交週報，他丟了週報就不用再提醒」<br>
+        <span class="agent">🤖 Agent：</span>已設定 ✅ 每 2 小時 tag 志偉，收到他的週報後自動停止
       </div>
     </div>
   </div>
