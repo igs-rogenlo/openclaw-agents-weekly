@@ -47,19 +47,26 @@ h1 { font-size: 2rem; text-align: center; margin-bottom: 8px; background: linear
 <div class="section">
   <h2>💬 自然語言群組通知 <span class="tag up">升級</span></h2>
   <div class="feature">
-    <div class="desc">不用進後台、不用選群組，直接用說的就能發通知</div>
+    <div class="desc">將 Agent 拉進群組後，任何人都能用自然語言設定提醒規則：定時 tag 成員、收到特定訊息時 tag，直到成員回覆才取消</div>
     <div class="example">
-      <div class="label">💡 使用範例</div>
+      <div class="label">💡 範例：定時提醒直到回覆</div>
       <div class="chat">
-        <span class="user">👤 使用者：</span>「幫我通知企劃群，明天早上 10 點產品會議改到 B 會議室」<br>
-        <span class="agent">🤖 Agent：</span>已發送通知到【企劃群】✅
+        <span class="user">👤 PM：</span>「每天下午 3 點提醒 @美術組 回報進度，有人回覆就取消」<br>
+        <span class="agent">🤖 Agent：</span>已設定 ✅ 每天 15:00 會 tag 美術組，任一成員回覆後自動停止
       </div>
     </div>
     <div class="example">
-      <div class="label">💡 使用範例</div>
+      <div class="label">💡 範例：收到訊息觸發提醒</div>
       <div class="chat">
-        <span class="user">👤 使用者：</span>「提醒美術群今天下班前交素材」<br>
-        <span class="agent">🤖 Agent：</span>已發送提醒到【美術群】✅
+        <span class="user">👤 主管：</span>「如果群組收到『版本釋出』的訊息，就 tag @QA組 開始測試」<br>
+        <span class="agent">🤖 Agent：</span>已設定 ✅ 偵測到「版本釋出」時會自動通知 QA 組
+      </div>
+    </div>
+    <div class="example">
+      <div class="label">💡 範例：每隔一段時間催繳</div>
+      <div class="chat">
+        <span class="user">👤 行政：</span>「每 2 小時提醒 @全體 填寫週報，有人交了就不再提醒他」<br>
+        <span class="agent">🤖 Agent：</span>已設定 ✅ 每 2 小時 tag 尚未填寫的成員，交了的人自動排除
       </div>
     </div>
   </div>
